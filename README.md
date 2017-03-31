@@ -1,6 +1,10 @@
 # benjamin.js
 A jQuery currency converter, formatter, and symbol applier. All about the Benjamins, baby!
 
+Currently works with:
+
+AUD, BGN, BRL, CAD, CHF, CNY, CZK, DKK, GBP, HKD, HRK, HUF, IDR, ILS, INR, JPY, KRW, MXN, MYR, NOK, NZD, PHP, PLN, RON, RUB, SEK, SGD, THB, TRY, USD, and ZAR
+
 ## Using the plugin
 
 ### Markup
