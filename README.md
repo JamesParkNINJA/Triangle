@@ -6,10 +6,14 @@ A jQuery currency converter, formatter, and symbol applier. All about the Benjam
 ### Markup
 
 ```html
+<!-- Standard setup for single class -->
 <span class="benjamin">£55.40</span>
 
+<!-- "data-oldbj": Override the oldCurrency option in your main JS call -->
+<!-- "data-newbj": Override the newCurrency option in your main JS call -->
 <span class="benjamin" data-oldbj="GBP" data-newbj="USD">£3456.99</span>
 
+<!-- Setup for all elements within container -->
 <div class="benjaminContainer">
     <span>$5,655.80</span>
     <span>$455.46</span>
@@ -20,13 +24,15 @@ A jQuery currency converter, formatter, and symbol applier. All about the Benjam
 
 ```javascript
 $(document).ready(function ($) {
+    // Only select elements with specific class
     $('.benjamin').benjaminjs(
         {
-            oldCurrency: 'GBP',
-            newCurrency: 'EUR'
+            oldCurrency: 'GBP', // The current currency used (to convert FROM)
+            newCurrency: 'EUR' // The new proposed currency (to convert TO)
         }
     );
     
+    // Used for all span elements within a container
     $('.benjaminContainer span').benjaminjs(
         {
             oldCurrency: 'USD',
@@ -48,7 +54,7 @@ $(document).ready(function ($) {
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License
 
 ## Acknowledgments
 
