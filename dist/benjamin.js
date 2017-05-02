@@ -215,11 +215,8 @@
                 } else { v = v.replace('.',newC[1]); }
 
                 var output = (newC[3] == 'pre' ? newC[4]+v : v+newC[4]);
-                
-                console.log(vA);
 
                 e.html(output);
-            
             }
             
             if (o != n) {
