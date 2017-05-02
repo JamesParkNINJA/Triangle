@@ -191,11 +191,11 @@
         this.each(function() {
             var e = $(this),
                 v = e.html(),
-                o = e.attr('data-bjold'),
-                n = e.attr('data-bjnew');
+                o = e.attr('data-bj-old'),
+                n = e.attr('data-bj-new');
             
-            if (!o) { o = settings.oldCurrency; } else { e.attr('data-bjold',n); }
-            if (!n) { n = settings.newCurrency; } else { e.attr('data-bjnew',o); }
+            if (!o) { o = settings.oldCurrency; } else { e.attr('data-bj-old',n); }
+            if (!n) { n = settings.newCurrency; } else { e.attr('data-bj-new',o); }
             
             var oldC = currencies[o],
                 newC = currencies[n];
@@ -211,12 +211,15 @@
                     var v1a = vA[0].slice(0,-3), 
                         v1b = vA[0].slice(-3), 
                         v1 = v1a+newC[0]+v1b;
-                    v = v1+newC[1]+vA[1];
+                    v = (vA[1] ? v1+newC[1]+vA[1] : v1+newC[1]);
                 } else { v = v.replace('.',newC[1]); }
 
                 var output = (newC[3] == 'pre' ? newC[4]+v : v+newC[4]);
+                
+                console.log(vA);
 
                 e.html(output);
+            
             }
             
             if (o != n) {
