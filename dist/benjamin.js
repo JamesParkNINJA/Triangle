@@ -220,34 +220,20 @@
             }
             
             if (o != n) {
-                // Fixer.io is not a pay-to-play API for large amounts of conversion
-                /* var xurl = 'http://api.fixer.io/latest?base='+o+'&symbols='+n;
-                $.getJSON(xurl, function(data){
-                    var jsonContent = $(data), rate = jsonContent[0]['rates'][n];
-                    if(rate) {  
-                        rate = parseFloat(rate);
-                        v = parseFloat(v);
-                        v = v * rate;
-                        v = (v).toFixed(newC[2]);
-                        
-                        fC(v, newC, oldC, e);
-                   } else { */
-                        var xurl = 'http://www.webservicex.net/CurrencyConvertor.asmx/ConversionRate?FromCurrency='+o+'&ToCurrency='+n,
-                            yqlURL = [ "http://query.yahooapis.com/v1/public/yql", "?q=" + encodeURIComponent("select * from xml where url='" + xurl + "'"), "&format=xml&callback=?" ].join("");
-                       
-                        $.getJSON(yqlURL, function(data){
-                            var jsonContent = $(data)[0].results, xml = $(jsonContent[0]), rate = xml.html();
-                            if(rate && rate > 0) {  
-                                rate = parseFloat(rate);
-                                v = parseFloat(v);
-                                v = v * rate;
-                                v = (v).toFixed(newC[2]);
+				var xurl = 'http://www.webservicex.net/CurrencyConvertor.asmx/ConversionRate?FromCurrency='+o+'&ToCurrency='+n,
+					yqlURL = [ "http://query.yahooapis.com/v1/public/yql", "?q=" + encodeURIComponent("select * from xml where url='" + xurl + "'"), "&format=xml&callback=?" ].join("");
 
-                                fC(v, newC, oldC, e);
-                           } else { return; }
-                        });
-                   // }
-                });
+				$.getJSON(yqlURL, function(data){
+					var jsonContent = $(data)[0].results, xml = $(jsonContent[0]), rate = xml.html();
+					if(rate && rate > 0) {  
+						rate = parseFloat(rate);
+						v = parseFloat(v);
+						v = v * rate;
+						v = (v).toFixed(newC[2]);
+
+						fC(v, newC, oldC, e);
+				   } else { return; }
+				});
             } else {
                 fC(v, newC, oldC, e);
             }
