@@ -51,8 +51,11 @@ $(document).ready(function ($) {
 
 ## API Dependencies
 
-* [Fixer.io](http://fixer.io/) - Main Currency Rates API (High up-rate)
-* [WebServiceX](http://www.webservicex.net/) - Backup Currency Rates API (Lower up-rate)
+* [WebServiceX](http://www.webservicex.net/) - Currency Rates API
+
+## Removed Dependencies
+
+* [Fixer.io](http://fixer.io/) - Sadly switched to a paid-for SAAS API, no longer viable.
 
 ## Authors
 
