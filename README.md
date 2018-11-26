@@ -1,3 +1,7 @@
+#Retired, due to monitisation of needed resources.
+
+---
+
 # benjamin.js
 A jQuery currency converter, formatter, and symbol applier. All about the Benjamins, baby!
 
